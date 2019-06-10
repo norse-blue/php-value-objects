@@ -1,0 +1,27 @@
+language: php
+dist: xenial
+
+php:
+  - 7.3
+
+env:
+  global:
+    - TOTAL_JOBS=2
+  matrix:
+    - COMPOSER_FLAGS="--prefer-lowest"
+    - COMPOSER_FLAGS=""
+
+before_install:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+
+before_script:
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
+  - ./cc-test-reporter before-build
+
+script:
+  - composer run check:coverage
+
+after_script:
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter format-coverage --input-type clover --output build/ci/code-climate-coverage-$TRAVIS_JOB_NUMBER.json build/coverage.xml; fi
+  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter sum-coverage --output - --parts $TOTAL_JOBS build/ci/code-codeclimate-coverage.*.json | ./cc-test-reporter upload-coverage --input -; fi

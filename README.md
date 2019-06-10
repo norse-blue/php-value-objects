@@ -1,14 +1,14 @@
 <div align="center">
-  <h1>PHP Value Objects</h1>
-  <p align="center"> 
-    <a href="https://packagist.org/packages/norse-blue/value-objects"><img alt="Stable Release" src="https://img.shields.io/packagist/v/norse-blue/value-objects.svg?color=%235e81ac&style=popout-square"></a>
-    <a href="https://circleci.com/gh/norse-blue/php-value-objects/tree/master"><img alt="Build Status" src="https://img.shields.io/circleci/project/github/norse-blue/php-value-objects/master.svg?color=%23a3be8c&style=popout-square"></a>
-    <a href="https://php.net/releases"><img alt="PHP Version" src="https://img.shields.io/packagist/php-v/norse-blue/value-objects.svg?color=%23b48ead&style=popout-square"></a>
-    <a href="https://codeclimate.com/github/norse-blue/php-value-objects/maintainability"><img src="https://api.codeclimate.com/v1/badges/edc0a95f00f2af5f6960/maintainability" /></a>
-    <a href="https://codeclimate.com/github/norse-blue/php-value-objects/test_coverage"><img src="https://api.codeclimate.com/v1/badges/edc0a95f00f2af5f6960/test_coverage" /></a>
-    <a href="https://packagist.org/packages/norse-blue/value-objects"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/norse-blue/value-objects.svg?color=%235e81ac&style=popout-square"></a>
-    <a href="https://packagist.org/packages/norse-blue/value-objects"><img alt="GitHub" src="https://img.shields.io/github/license/norse-blue/php-value-objects.svg?color=%235e81ac&style=popout-square"></a>
-  </p>
+    <h1>PHP Value Objects</h1>
+    <p align="center"> 
+        <a href="https://packagist.org/packages/norse-blue/value-objects"><img alt="Stable Release" src="https://img.shields.io/packagist/v/norse-blue/value-objects.svg?color=%235e81ac&style=popout-square"></a>
+        <a href="https://circleci.com/gh/norse-blue/php-value-objects/tree/master"><img alt="Build Status" src="https://img.shields.io/circleci/project/github/norse-blue/php-value-objects/master.svg?color=%23a3be8c&style=popout-square"></a>
+        <a href="https://php.net/releases"><img alt="PHP Version" src="https://img.shields.io/packagist/php-v/norse-blue/value-objects.svg?color=%23b48ead&style=popout-square"></a>
+        <a href="https://codeclimate.com/github/norse-blue/php-value-objects/maintainability"><img src="https://api.codeclimate.com/v1/badges/edc0a95f00f2af5f6960/maintainability" /></a>
+        <a href="https://codeclimate.com/github/norse-blue/php-value-objects/test_coverage"><img src="https://api.codeclimate.com/v1/badges/edc0a95f00f2af5f6960/test_coverage" /></a>
+        <a href="https://packagist.org/packages/norse-blue/value-objects"><img alt="Total Downloads" src="https://img.shields.io/packagist/dt/norse-blue/value-objects.svg?color=%235e81ac&style=popout-square"></a>
+        <a href="https://packagist.org/packages/norse-blue/value-objects"><img alt="GitHub" src="https://img.shields.io/github/license/norse-blue/php-value-objects.svg?color=%235e81ac&style=popout-square"></a>
+    </p>
 </div>
 <hr>
 
