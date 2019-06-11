@@ -5,8 +5,6 @@ php:
   - 7.3
 
 env:
-  global:
-    - TOTAL_JOBS=2
   matrix:
     - COMPOSER_FLAGS="--prefer-lowest"
     - COMPOSER_FLAGS=""
@@ -26,5 +24,8 @@ script:
   - composer run test:coverage
 
 after_script:
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter format-coverage --input-type clover --output build/ci/code-climate-coverage-$TRAVIS_JOB_NUMBER.json build/coverage.xml; fi
-  - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter sum-coverage --output - --parts $TOTAL_JOBS build/ci/code-codeclimate-coverage.*.json | ./cc-test-reporter upload-coverage --input -; fi
+  - |
+    if [[ "$TRAVIS_TEST_RESULT" == 0 && -z "$COMPOSER_FLAGS" ]]; then
+      ./cc-test-reporter format-coverage --input-type clover --output build/code-climate-coverage.json build/coverage.xml
+      ./cc-test-reporter upload-coverage --input build/code-climate-coverage.json
+    fi;
