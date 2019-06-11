@@ -48,18 +48,6 @@ abstract class SimpleValueObject extends ValueObject
     abstract public function isValid($value): bool;
 
     /**
-     * Check if the value objects equals another value.
-     *
-     * @param mixed $other
-     *
-     * @return bool
-     */
-    final public function equals($other): bool
-    {
-        return $this->value === self::unwrap($other);
-    }
-
-    /**
      * Value accessor.
      *
      * @return mixed

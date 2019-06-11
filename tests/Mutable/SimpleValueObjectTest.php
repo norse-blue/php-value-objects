@@ -29,9 +29,6 @@ class SimpleValueObjectTest extends TestCase
         $subject = new Spvo(13);
 
         $this->assertEquals(13, $subject->value);
-        $this->assertTrue($subject->equals(13));
-        $this->assertTrue($subject->equals($subject));
-        $this->assertTrue($subject->equals($subject->value));
     }
 
     /** @test */
@@ -42,17 +39,6 @@ class SimpleValueObjectTest extends TestCase
 
         $this->assertEquals(13, $subject->value);
         $this->assertEquals(13, $other->value);
-        $this->assertTrue($subject->equals($other));
-    }
-
-    /** @test */
-    public function single_property_value_object_is_commutative()
-    {
-        $subject = new Spvo(13);
-        $other = new Spvo(13);
-
-        $this->assertTrue($subject->equals($other));
-        $this->assertTrue($other->equals($subject));
     }
 
     /** @test */
