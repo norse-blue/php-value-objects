@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace NorseBlue\ValueObjects;
 
-use NorseBlue\ValueObjects\Traits\HasPropertyAccessors;
-use NorseBlue\ValueObjects\Traits\HasPropertyMutators;
+use NorseBlue\HandyProperties\Traits\HasPropertyAccessors;
+use NorseBlue\HandyProperties\Traits\HasPropertyMutators;
 
 /**
  * Defines a value object.
@@ -16,15 +16,6 @@ abstract class ValueObject
 {
     use HasPropertyAccessors;
     use HasPropertyMutators;
-
-    /**
-     * Validate the given value.
-     *
-     * @param mixed $value
-     *
-     * @return bool
-     */
-    abstract public function isValid($value): bool;
 
     /**
      * Check if the value objects equals another value.

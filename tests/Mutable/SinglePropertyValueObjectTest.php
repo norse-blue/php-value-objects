@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace NorseBlue\ValueObjects\Tests\SingleProperty;
 
 use Exception;
+use NorseBlue\HandyProperties\Exceptions\PropertyNotAccessibleException;
+use NorseBlue\HandyProperties\Exceptions\PropertyNotMutableException;
 use NorseBlue\ValueObjects\Exceptions\InvalidValueException;
-use NorseBlue\ValueObjects\Exceptions\PropertyNotFoundException;
-use NorseBlue\ValueObjects\SingleProperty\SinglePropertyValueObject;
+use NorseBlue\ValueObjects\Mutable\SimpleValueObject;
 use NorseBlue\ValueObjects\Tests\Helpers\Spvo;
 use NorseBlue\ValueObjects\Tests\TestCase;
 
@@ -18,7 +19,7 @@ class SinglePropertyValueObjectTest extends TestCase
     {
         $subject = new Spvo();
 
-        $this->assertInstanceOf(SinglePropertyValueObject::class, $subject);
+        $this->assertInstanceOf(SimpleValueObject::class, $subject);
         $this->assertEquals(null, $subject->value);
     }
 
@@ -81,12 +82,12 @@ class SinglePropertyValueObjectTest extends TestCase
         try {
             isset($subject->non_existent);
         } catch (Exception $e) {
-            $this->assertInstanceOf(PropertyNotFoundException::class, $e);
+            $this->assertInstanceOf(PropertyNotAccessibleException::class, $e);
 
             return;
         }
 
-        $this->fail(PropertyNotFoundException::class . ' was not thrown.');
+        $this->fail(PropertyNotAccessibleException::class . ' was not thrown.');
     }
 
     /** @test */
@@ -126,7 +127,7 @@ class SinglePropertyValueObjectTest extends TestCase
         try {
             $subject->non_existent;
         } catch (Exception $e) {
-            $this->assertInstanceOf(PropertyNotFoundException::class, $e);
+            $this->assertInstanceOf(PropertyNotAccessibleException::class, $e);
             $this->assertEquals('non_existent', $e->getProperty());
 
             return;
@@ -143,7 +144,7 @@ class SinglePropertyValueObjectTest extends TestCase
         try {
             $subject->non_existent = 'new value';
         } catch (Exception $e) {
-            $this->assertInstanceOf(PropertyNotFoundException::class, $e);
+            $this->assertInstanceOf(PropertyNotMutableException::class, $e);
             $this->assertEquals('non_existent', $e->getProperty());
 
             return;

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace NorseBlue\ValueObjects\Tests\Helpers;
 
-use NorseBlue\ValueObjects\SingleProperty\SinglePropertyValueObject;
+use NorseBlue\ValueObjects\Mutable\SimpleValueObject;
 
 /**
  * @property mixed $value
  */
-class Spvo extends SinglePropertyValueObject
+class Spvo extends SimpleValueObject
 {
     /**
      * Validate the given value.

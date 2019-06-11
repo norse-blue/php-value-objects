@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace NorseBlue\ValueObjects\SingleProperty;
+namespace NorseBlue\ValueObjects\Mutable;
 
 use NorseBlue\ValueObjects\Exceptions\InvalidValueException;
 use NorseBlue\ValueObjects\ValueObject;
 
-abstract class SinglePropertyValueObject extends ValueObject
+abstract class SimpleValueObject extends ValueObject
 {
     /** @var mixed The objects's value */
     protected $value;
@@ -39,6 +39,15 @@ abstract class SinglePropertyValueObject extends ValueObject
     }
 
     /**
+     * Validate the given value.
+     *
+     * @param mixed $value
+     *
+     * @return bool
+     */
+    abstract public function isValid($value): bool;
+
+    /**
      * Check if the value objects equals another value.
      *
      * @param mixed $other
@@ -55,7 +64,7 @@ abstract class SinglePropertyValueObject extends ValueObject
      *
      * @return mixed
      */
-    final public function getValueProperty()
+    final protected function getValueProperty()
     {
         return $this->value;
     }
@@ -65,7 +74,7 @@ abstract class SinglePropertyValueObject extends ValueObject
      *
      * @param mixed $value
      */
-    final public function changeValueProperty($value): void
+    final protected function changeValueProperty($value): void
     {
         if (!$value instanceof static && !$this->isValid($value)) {
             throw new InvalidValueException('The given value is not valid.');

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace NorseBlue\ValueObjects\Tests\Helpers;
 
-use NorseBlue\ValueObjects\SingleProperty\ImmutableSinglePropertyValueObject;
+use NorseBlue\ValueObjects\Immutable\ImmutableSimpleValueObject;
 
 /**
  * @property mixed $value
  */
-class Ispvo extends ImmutableSinglePropertyValueObject
+class Ispvo extends ImmutableSimpleValueObject
 {
     /**
      * Validate the given value.

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace NorseBlue\ValueObjects\Tests\SingleProperty;
 
 use Exception;
-use NorseBlue\ValueObjects\Exceptions\ImmutablePropertyException;
+use NorseBlue\HandyProperties\Exceptions\PropertyNotMutableException;
 use NorseBlue\ValueObjects\Tests\Helpers\Ispvo;
 use NorseBlue\ValueObjects\Tests\TestCase;
 
@@ -19,12 +19,12 @@ class ImmutablePropertyValueObjectTest extends TestCase
         try {
             $subject->value = 9;
         } catch (Exception $e) {
-            $this->assertInstanceOf(ImmutablePropertyException::class, $e);
+            $this->assertInstanceOf(PropertyNotMutableException::class, $e);
             $this->assertEquals('value', $e->getProperty());
 
             return;
         }
 
-        $this->fail(ImmutablePropertyException::class . ' was not thrown.');
+        $this->fail(PropertyNotMutableException::class . ' was not thrown.');
     }
 }
