@@ -20,7 +20,10 @@ before_script:
   - ./cc-test-reporter before-build
 
 script:
-  - composer run check:coverage
+  - composer run style:check || true
+  - composer run analyse || true
+  - composer run insights || true
+  - composer run test:coverage
 
 after_script:
   - if [[ "$TRAVIS_TEST_RESULT" == 0 ]]; then ./cc-test-reporter format-coverage --input-type clover --output build/ci/code-climate-coverage-$TRAVIS_JOB_NUMBER.json build/coverage.xml; fi
