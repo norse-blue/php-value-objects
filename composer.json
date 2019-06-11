@@ -55,6 +55,7 @@
       "@test:coverage"
     ],
     "insights": "vendor/bin/phpinsights --no-interaction --ansi",
+    "insights:verbose": "vendor/bin/phpinsights --no-interaction --ansi --verbose",
     "style:check": "vendor/bin/phpcs",
     "style:fix": "vendor/bin/phpcbf",
     "test": "vendor/bin/phpunit --colors=always",
