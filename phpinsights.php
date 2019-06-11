@@ -2,6 +2,14 @@
 
 declare(strict_types=1);
 
+use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenNormalClasses;
+use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterCastSniff;
+use PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff;
+use SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff;
+
 return [
 
     /*
@@ -35,7 +43,18 @@ return [
     ],
 
     'remove' => [
+        // Architecture
+        ForbiddenNormalClasses::class,
+        ForbiddenTraits::class,
+        SuperfluousExceptionNamingSniff::class,
 
+        // Code
+        DisallowMixedTypeHintSniff::class,
+
+        // Style
+        LineLengthSniff::class,
+        SpaceAfterCastSniff::class,
+        SpaceAfterNotSniff::class,
     ],
 
     'config' => [
