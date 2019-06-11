@@ -7,6 +7,11 @@ namespace NorseBlue\ValueObjects\Mutable;
 use NorseBlue\ValueObjects\Exceptions\InvalidValueException;
 use NorseBlue\ValueObjects\ValueObject;
 
+/**
+ * Defines a simple value object.
+ *
+ * @property mixed $value
+ */
 abstract class SimpleValueObject extends ValueObject
 {
     /** @var mixed The objects's value */

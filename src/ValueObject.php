@@ -9,8 +9,6 @@ use NorseBlue\HandyProperties\Traits\HasPropertyMutators;
 
 /**
  * Defines a value object.
- *
- * @property mixed $value
  */
 abstract class ValueObject
 {
