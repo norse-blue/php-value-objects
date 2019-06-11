@@ -22,7 +22,7 @@ abstract class SimpleValueObject extends ValueObject
      *
      * @param mixed $value
      */
-    final public function __construct($value = null)
+    public function __construct($value = null)
     {
         $this->changeValueProperty($value);
     }
@@ -50,7 +50,7 @@ abstract class SimpleValueObject extends ValueObject
      *
      * @return bool
      */
-    abstract public function isValid($value): bool;
+    abstract protected function isValid($value): bool;
 
     /**
      * Value accessor.
