@@ -12,7 +12,7 @@ use NorseBlue\ValueObjects\Mutable\SimpleValueObject;
 use NorseBlue\ValueObjects\Tests\Helpers\Spvo;
 use NorseBlue\ValueObjects\Tests\TestCase;
 
-class SinglePropertyValueObjectTest extends TestCase
+class SimpleValueObjectTest extends TestCase
 {
     /** @test */
     public function single_property_value_object_can_be_created_with_default_value()

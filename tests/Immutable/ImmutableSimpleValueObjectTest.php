@@ -9,7 +9,7 @@ use NorseBlue\HandyProperties\Exceptions\PropertyNotMutableException;
 use NorseBlue\ValueObjects\Tests\Helpers\Ispvo;
 use NorseBlue\ValueObjects\Tests\TestCase;
 
-class ImmutablePropertyValueObjectTest extends TestCase
+class ImmutableSimpleValueObjectTest extends TestCase
 {
     /** @test */
     public function immutable_single_value_property_object_cannot_change_value()
