@@ -18,7 +18,7 @@ trait SimpleValueObjectBehavior
      */
     public function __construct($value = null)
     {
-        $this->changeValueProperty($value);
+        $this->mutatorValue($value);
     }
 
     /**
@@ -51,7 +51,7 @@ trait SimpleValueObjectBehavior
      *
      * @return mixed
      */
-    final public function getValueProperty()
+    final public function accessorValue()
     {
         return $this->value;
     }
@@ -61,7 +61,7 @@ trait SimpleValueObjectBehavior
      *
      * @param mixed $value
      */
-    final public function changeValueProperty($value): void
+    final public function mutatorValue($value): void
     {
         if (!$value instanceof static && !$this->isValid($value)) {
             throw new InvalidValueException('The given value is not valid.');

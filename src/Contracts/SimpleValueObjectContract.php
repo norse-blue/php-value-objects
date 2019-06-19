@@ -32,12 +32,12 @@ interface SimpleValueObjectContract
      *
      * @return mixed
      */
-    public function getValueProperty();
+    public function accessorValue();
 
     /**
      * Value mutator.
      *
      * @param mixed $value
      */
-    public function changeValueProperty($value): void;
+    public function mutatorValue($value): void;
 }
