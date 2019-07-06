@@ -19,7 +19,7 @@
 >Requirements:
 >- [PHP 7.3+](https://php.net/releases)
 
-Install PHP Value Objects using Composer:
+Install this package using Composer:
 
 ```bash
 composer require norse-blue/value-objects
