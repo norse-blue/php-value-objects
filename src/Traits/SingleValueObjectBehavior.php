@@ -6,9 +6,9 @@ namespace NorseBlue\ValueObjects\Traits;
 
 use NorseBlue\ValueObjects\Exceptions\InvalidValueException;
 
-trait SimpleValueObjectBehavior
+trait SingleValueObjectBehavior
 {
-    /** @var mixed The objects's value */
+    /** @var mixed The object's value. */
     protected $value;
 
     /**
@@ -38,13 +38,14 @@ trait SimpleValueObjectBehavior
     }
 
     /**
-     * Validate the given value.
+     * Converts the object to string by casting the value.
      *
-     * @param mixed $value
-     *
-     * @return bool
+     * @return string
      */
-    abstract public function isValid($value): bool;
+    final public function __toString(): string
+    {
+        return (string)$this->value;
+    }
 
     /**
      * Value accessor.
@@ -55,6 +56,15 @@ trait SimpleValueObjectBehavior
     {
         return $this->value;
     }
+
+    /**
+     * Validate the given value.
+     *
+     * @param mixed $value
+     *
+     * @return bool
+     */
+    abstract public function isValid($value): bool;
 
     /**
      * Value mutator.
@@ -68,15 +78,5 @@ trait SimpleValueObjectBehavior
         }
 
         $this->value = static::unwrap($value);
-    }
-
-    /**
-     * Converts the object to string by casting the value.
-     *
-     * @return string
-     */
-    final public function __toString(): string
-    {
-        return (string)$this->value;
     }
 }

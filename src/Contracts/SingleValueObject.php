@@ -7,7 +7,7 @@ namespace NorseBlue\ValueObjects\Contracts;
 /**
  * @property mixed $value
  */
-interface SimpleValueObjectContract
+interface SingleValueObject
 {
     /**
      * Unwrap the value object.
@@ -19,6 +19,13 @@ interface SimpleValueObjectContract
     public static function unwrap($value);
 
     /**
+     * Value accessor.
+     *
+     * @return mixed
+     */
+    public function accessorValue();
+
+    /**
      * Validate the given value.
      *
      * @param mixed $value
@@ -26,13 +33,6 @@ interface SimpleValueObjectContract
      * @return bool
      */
     public function isValid($value): bool;
-
-    /**
-     * Value accessor.
-     *
-     * @return mixed
-     */
-    public function accessorValue();
 
     /**
      * Value mutator.

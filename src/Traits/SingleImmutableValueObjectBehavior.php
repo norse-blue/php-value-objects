@@ -6,7 +6,7 @@ namespace NorseBlue\ValueObjects\Traits;
 
 use NorseBlue\HandyProperties\Exceptions\PropertyNotMutableException;
 
-trait ImmutableValueObjectBehavior
+trait SingleImmutableValueObjectBehavior
 {
     /**
      * Override property mutator to prevent mutability.

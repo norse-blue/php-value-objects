@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace NorseBlue\ValueObjects\Tests\Helpers;
 
-use NorseBlue\ValueObjects\Immutable\ImmutableSimpleValueObject;
+use NorseBlue\ValueObjects\SingleValueObject;
 
 /**
  * @property mixed $value
  */
-class Ispvo extends ImmutableSimpleValueObject
+class SingleVO extends SingleValueObject
 {
     /**
      * Validate the given value.
@@ -20,6 +20,6 @@ class Ispvo extends ImmutableSimpleValueObject
      */
     public function isValid($value): bool
     {
-        return is_null($value) || (is_int($value) && $value < 9);
+        return is_null($value) || (is_int($value) && $value > 9);
     }
 }

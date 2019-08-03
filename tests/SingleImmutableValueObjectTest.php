@@ -2,19 +2,18 @@
 
 declare(strict_types=1);
 
-namespace NorseBlue\ValueObjects\Tests\SingleProperty;
+namespace NorseBlue\ValueObjects\Tests;
 
 use Exception;
 use NorseBlue\HandyProperties\Exceptions\PropertyNotMutableException;
-use NorseBlue\ValueObjects\Tests\Helpers\Ispvo;
-use NorseBlue\ValueObjects\Tests\TestCase;
+use NorseBlue\ValueObjects\Tests\Helpers\SingleImmutableVO;
 
-class ImmutableSimpleValueObjectTest extends TestCase
+class SingleImmutableValueObjectTest extends TestCase
 {
     /** @test */
     public function immutable_single_value_property_object_cannot_change_value()
     {
-        $subject = new Ispvo();
+        $subject = new SingleImmutableVO();
 
         try {
             $subject->value = 9;
