@@ -57,7 +57,7 @@ trait SingleValueObjectBehavior
      *
      * @return mixed
      */
-    final public function accessorValue()
+    final protected function accessorValue()
     {
         return $this->value;
     }
@@ -76,7 +76,7 @@ trait SingleValueObjectBehavior
      *
      * @param mixed $value
      */
-    final public function mutatorValue($value): void
+    final protected function mutatorValue($value): void
     {
         if (!$value instanceof static && !$this->isValid($value)) {
             throw new InvalidValueException('The given value is not valid.');

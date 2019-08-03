@@ -19,13 +19,6 @@ interface SingleValueObject
     public static function unwrap($value);
 
     /**
-     * Value accessor.
-     *
-     * @return mixed
-     */
-    public function accessorValue();
-
-    /**
      * Validate the given value.
      *
      * @param mixed $value
@@ -33,11 +26,4 @@ interface SingleValueObject
      * @return bool
      */
     public function isValid($value): bool;
-
-    /**
-     * Value mutator.
-     *
-     * @param mixed $value
-     */
-    public function mutatorValue($value): void;
 }
