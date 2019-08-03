@@ -8,6 +8,8 @@ use NorseBlue\HandyProperties\Exceptions\PropertyNotMutableException;
 
 trait SingleImmutableValueObjectBehavior
 {
+    use SingleValueObjectBehavior;
+
     /**
      * Override property mutator to prevent mutability.
      *

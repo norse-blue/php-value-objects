@@ -4,10 +4,15 @@ declare(strict_types=1);
 
 namespace NorseBlue\ValueObjects\Traits;
 
+use NorseBlue\HandyProperties\Traits\HasPropertyAccessors;
+use NorseBlue\HandyProperties\Traits\HasPropertyMutators;
 use NorseBlue\ValueObjects\Exceptions\InvalidValueException;
 
 trait SingleValueObjectBehavior
 {
+    use HasPropertyAccessors;
+    use HasPropertyMutators;
+
     /** @var mixed The object's value. */
     protected $value;
 
