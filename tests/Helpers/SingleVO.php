@@ -6,9 +6,6 @@ namespace NorseBlue\ValueObjects\Tests\Helpers;
 
 use NorseBlue\ValueObjects\SingleValueObject;
 
-/**
- * @property mixed $value
- */
 class SingleVO extends SingleValueObject
 {
     /**

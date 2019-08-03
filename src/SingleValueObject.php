@@ -8,7 +8,7 @@ use NorseBlue\ValueObjects\Contracts\SingleValueObject as SingleValueObjectContr
 use NorseBlue\ValueObjects\Traits\SingleValueObjectBehavior;
 
 /**
- * Defines a simple value object.
+ * Defines a single value object.
  *
  * @property mixed $value
  */

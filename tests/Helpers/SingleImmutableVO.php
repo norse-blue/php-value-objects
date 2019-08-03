@@ -6,9 +6,6 @@ namespace NorseBlue\ValueObjects\Tests\Helpers;
 
 use NorseBlue\ValueObjects\SingleImmutableValueObject;
 
-/**
- * @property mixed $value
- */
 class SingleImmutableVO extends SingleImmutableValueObject
 {
     /**
