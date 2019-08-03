@@ -1,4 +1,19 @@
+remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-remote-theme
-remote_theme: pmarsceill/just-the-docs
+  - jekyll-seo-tag
+
+title: "PHP Value Objects"
+description: "PHP Value Objects is a PHP library that implements the value object technique and lets you create your own value objects with the scaffolding already laid out for you."
+url: "https://norse-blue.github.io"
+baseurl: "/php-value-objects/"
+permalink: pretty
 search_enabled: true
+
+# Aux links for the upper right navigation
+aux_links:
+  "PHP Value Objects on GitHub":
+    - "//github.com/norse-blue/php-value-objects"
+
+# Google Analytics
+ga_tracking: UA-144830285-2
