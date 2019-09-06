@@ -14,7 +14,7 @@ use NorseBlue\ValueObjects\Tests\Helpers\SingleVO;
 class SingleValueObjectTest extends TestCase
 {
     /** @test */
-    public function single_property_value_object_can_be_created_with_default_value()
+    public function single_property_value_object_can_be_created_with_default_value(): void
     {
         $subject = new SingleVO();
 
@@ -23,7 +23,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_can_be_unwrapped()
+    public function single_property_value_object_can_be_unwrapped(): void
     {
         $subject = new SingleVO(13);
 
@@ -32,7 +32,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_can_change_value()
+    public function single_property_value_object_can_change_value(): void
     {
         $subject = new SingleVO();
 
@@ -42,7 +42,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_cannot_get_non_existent_property()
+    public function single_property_value_object_cannot_get_non_existent_property(): void
     {
         $subject = new SingleVO();
 
@@ -59,7 +59,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_cannot_set_non_existent_property()
+    public function single_property_value_object_cannot_set_non_existent_property(): void
     {
         $subject = new SingleVO();
 
@@ -76,7 +76,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_equals_object()
+    public function single_property_value_object_equals_object(): void
     {
         $subject = new SingleVO(13);
         $other = new SingleVO(13);
@@ -86,7 +86,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_equals_value()
+    public function single_property_value_object_equals_value(): void
     {
         $subject = new SingleVO(13);
 
@@ -94,7 +94,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_is_transformed_into_string()
+    public function single_property_value_object_is_transformed_into_string(): void
     {
         $subject = new SingleVO();
         $other = new SingleVO(13);
@@ -109,7 +109,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_isset_throws_exception_when_property_non_existent()
+    public function single_property_value_object_isset_throws_exception_when_property_non_existent(): void
     {
         $subject = new SingleVO(13);
 
@@ -125,7 +125,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_isset_works_appropriately()
+    public function single_property_value_object_isset_works_appropriately(): void
     {
         $subject = new SingleVO();
         $other = new SingleVO(13);
@@ -135,7 +135,7 @@ class SingleValueObjectTest extends TestCase
     }
 
     /** @test */
-    public function single_property_value_object_throws_error_when_value_is_invalid()
+    public function single_property_value_object_throws_error_when_value_is_invalid(): void
     {
         try {
             new SingleVO(3);

@@ -11,7 +11,7 @@ use NorseBlue\ValueObjects\Tests\Helpers\SingleImmutableVO;
 class SingleImmutableValueObjectTest extends TestCase
 {
     /** @test */
-    public function immutable_single_value_property_object_cannot_change_value()
+    public function immutable_single_value_property_object_cannot_change_value(): void
     {
         $subject = new SingleImmutableVO();
 
