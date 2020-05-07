@@ -1,4 +1,8 @@
 parameters:
-    level: 5
+    level: 6
     paths:
         - src
+    ignoreErrors:
+        -
+            message: '~Property NorseBlue\\ValueObjects\\SingleImmutableValueObject::\$value is not writable.~'
+            path: src/Traits/SingleValueObjectBehavior.php
