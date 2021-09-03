@@ -7,6 +7,7 @@ use NunoMaduro\PhpInsights\Domain\Insights\ForbiddenTraits;
 use PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff;
 use PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterCastSniff;
 use PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff;
+use PhpCsFixer\Fixer\CastNotation\CastSpacesFixer;
 use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
 use SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff;
@@ -59,6 +60,9 @@ return [
     ],
 
     'config' => [
+        CastSpacesFixer::class => [
+            'space' => 'none',
+        ],
         OrderedClassElementsFixer::class => [
             'order' => [ // List of strings defining order of elements.
                 'use_trait',
@@ -75,7 +79,7 @@ return [
                 'method_protected',
                 'method_private',
             ],
-            'sortAlgorithm' => 'none', // possible values ['none', 'alpha']
+            'sort_algorithm' => 'none', // possible values ['none', 'alpha']
         ],
     ],
 ];

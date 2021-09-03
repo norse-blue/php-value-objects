@@ -12,10 +12,8 @@ trait SingleImmutableValueObjectBehavior
 
     /**
      * Override property mutator to prevent mutability.
-     *
-     * @param mixed $value
      */
-    final public function __set(string $key, $value): self
+    final public function __set(string $key, mixed $value): void
     {
         throw new PropertyNotMutableException(
             $key,

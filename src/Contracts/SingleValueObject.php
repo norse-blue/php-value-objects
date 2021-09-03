@@ -11,17 +11,11 @@ interface SingleValueObject
 {
     /**
      * Unwrap the value object.
-     *
-     * @param mixed $value
-     *
-     * @return mixed
      */
-    public static function unwrap($value);
+    public static function unwrap(mixed $value): mixed;
 
     /**
      * Validate the given value.
-     *
-     * @param mixed $value
      */
-    public function isValid($value): bool;
+    public function isValid(mixed $value): bool;
 }

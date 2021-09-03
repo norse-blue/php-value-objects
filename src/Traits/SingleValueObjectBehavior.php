@@ -13,27 +13,20 @@ trait SingleValueObjectBehavior
     use HasPropertyAccessors;
     use HasPropertyMutators;
 
-    /** @var mixed The object's value. */
-    protected $value;
+    protected mixed $value;
 
     /**
      * Create a new instance.
-     *
-     * @param mixed $value
      */
-    public function __construct($value = null)
+    public function __construct(mixed $value = null)
     {
         $this->mutatorValue($value);
     }
 
     /**
      * Unwrap the value object.
-     *
-     * @param mixed $value
-     *
-     * @return mixed
      */
-    final public static function unwrap($value)
+    final public static function unwrap(mixed $value): mixed
     {
         if ($value instanceof self) {
             $value = $value->value;
@@ -47,32 +40,26 @@ trait SingleValueObjectBehavior
      */
     final public function __toString(): string
     {
-        return (string) $this->value;
+        return (string)$this->value;
     }
 
     /**
      * Validate the given value.
-     *
-     * @param mixed $value
      */
-    abstract public function isValid($value): bool;
+    abstract public function isValid(mixed $value): bool;
 
     /**
      * Value accessor.
-     *
-     * @return mixed
      */
-    final protected function accessorValue()
+    final protected function accessorValue(): mixed
     {
         return $this->value;
     }
 
     /**
-     * Value mutator.
-     *
-     * @param mixed $value
+     * Value mutator.SingleValueObject
      */
-    final protected function mutatorValue($value): void
+    final protected function mutatorValue(mixed $value): void
     {
         if (! $value instanceof static && ! $this->isValid($value)) {
             throw new InvalidValueException('The given value is not valid.');
