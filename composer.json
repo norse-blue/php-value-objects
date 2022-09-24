@@ -23,7 +23,7 @@
   },
   "require": {
     "php": "^8.0",
-    "norse-blue/handy-properties": "^3.0"
+    "norse-blue/handy-properties": "^3.1"
   },
   "require-dev": {
     "nunomaduro/phpinsights": "^2.0",
@@ -42,24 +42,28 @@
     }
   },
   "scripts": {
-    "analyse": "vendor/bin/phpstan analyse --ansi",
+    "analyze": "vendor/bin/phpstan analyze --ansi",
+    "analyze:github": "vendor/bin/phpstan analyze --error-format=github",
     "check": [
       "@style:check",
-      "@analyse",
+      "@analyze",
       "@insights",
       "@test"
     ],
     "check:coverage": [
       "@style:check",
-      "@analyse",
+      "@analyze",
       "@insights",
       "@test:coverage"
     ],
     "insights": "vendor/bin/phpinsights --no-interaction --ansi",
     "insights:verbose": "vendor/bin/phpinsights --no-interaction --ansi --verbose",
     "style:check": "vendor/bin/phpcs",
-    "style:fix": "vendor/bin/phpcbf",
+    "style:fix": "vendor/bin/phpcbf || phpcs",
     "test": "vendor/bin/phpunit --colors=always",
-    "test:coverage": "vendor/bin/phpunit --colors=always --coverage-clover=./build/coverage.xml --coverage-html=./build/coverage"
+    "test:coverage": [
+      "@putenv XDEBUG_MODE=coverage",
+      "phpunit --colors=always --coverage-text --coverage-clover=./build/coverage.xml --coverage-html=./build/coverage"
+    ]
   }
 }

@@ -10,6 +10,7 @@ use PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\SpaceAfterNotSniff;
 use PhpCsFixer\Fixer\CastNotation\CastSpacesFixer;
 use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
 use SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff;
+use SlevomatCodingStandard\Sniffs\Functions\FunctionLengthSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff;
 
 return [
@@ -48,6 +49,7 @@ return [
         // Architecture
         ForbiddenNormalClasses::class,
         ForbiddenTraits::class,
+        FunctionLengthSniff::class,
         SuperfluousExceptionNamingSniff::class,
 
         // Code
@@ -82,4 +84,5 @@ return [
             'sort_algorithm' => 'none', // possible values ['none', 'alpha']
         ],
     ],
+
 ];
